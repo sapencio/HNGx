@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_info():
     try:
         slack_name = request.args.get('slack_name').title()
-        track = request.args.get('track').title()
+        track = request.args.get('track').title().lower()
         current_day = datetime.datetime.now().strftime('%A')
         utc_time = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
 
